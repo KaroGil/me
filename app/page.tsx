@@ -19,7 +19,7 @@ export default function Home() {
             />
           <div className="flex  flex-col items-center justify-center text-center gap-1">
             <h1 className="text-4xl font-bold">Karolina Gil</h1>
-            <p> I am a 21 year old Data Science student at UiB and this is my website to showcase some of my projects.</p>
+            <p> I am a 22 year old Data Science student at UiB</p>
           </div>
         </div>
         <div className="flex flex-row gap-4 justify-evenly">

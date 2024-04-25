@@ -28,6 +28,13 @@ export default function Project1() {
         setConvertedAmount(converted);
     };
 
+    const reset = () => {
+        setTotal('');
+        setYourShare('');
+        setMoneyFromBank('');
+        setConvertedAmount(null);
+    }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-br from-blue-500 to-green-500">
         <div className="bg-white text-black px-10 py-10 w-1/2 justify-between gap-5 flex flex-col">
@@ -41,9 +48,9 @@ export default function Project1() {
         
 
             {convertedAmount !== null ? (
-                <div className='flex flex-row justify-between w-max gap-1'>
+                <div className='flex flex-col justify-between w-max gap-1'>
                     <p>Converted Amount: {convertedAmount}</p>
-                    <button className='hover:bg-slate-50' onClick={() => setConvertedAmount(null)}>Reset</button>
+                    <button className='bg-gray-100 hover:bg-slate-50' onClick={() => reset()}>Reset</button>
                 </div>
             ): 
             <form className="bg-white text-black px-10 py-10 justify-between gap-5 flex flex-col">
