@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from "next/link";
-import { RiHomeLine } from "react-icons/ri";
+import Nav from '@/app/components/nav';
 
-const convert_bill_share = (total, your_share, money_from_bank) => {
+const convert_bill_share = (total: number, your_share: number, money_from_bank: number) => {
     const  p = your_share / total
     const amount = p * money_from_bank
     return amount
@@ -14,7 +13,7 @@ export default function Project1() {
     const [total, setTotal] = useState('');
     const [yourShare, setYourShare] = useState('');
     const [moneyFromBank, setMoneyFromBank] = useState('');
-    const [convertedAmount, setConvertedAmount] = useState(null);
+    const [convertedAmount, setConvertedAmount] = useState(-1);
 
     const convert = () => {
         // Validate input values
@@ -32,13 +31,13 @@ export default function Project1() {
         setTotal('');
         setYourShare('');
         setMoneyFromBank('');
-        setConvertedAmount(null);
+        setConvertedAmount(-1);
     }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-br from-blue-500 to-green-500">
         <div className="bg-white text-black px-10 py-10 w-1/2 justify-between gap-5 flex flex-col">
-            <Link href="/" className="flex flex-row gap-1 items-center hover:bg-slate-50 p-4"> <RiHomeLine /> Home </Link>
+            <Nav />
             <h1 className="text-4xl font-bold">Currency converter</h1>
             <p> This is a currency converter that converts between two currencies. </p>
             <p> Input the total amount of the bill, your share of the bill and the amount taken from the bank account of the one who paid. </p>
@@ -47,7 +46,7 @@ export default function Project1() {
         
         
 
-            {convertedAmount !== null ? (
+            {convertedAmount !== -1 ? (
                 <div className='flex flex-col justify-between w-max gap-1'>
                     <p>Converted Amount: {convertedAmount}</p>
                     <button className='bg-gray-100 hover:bg-slate-50' onClick={() => reset()}>Reset</button>
