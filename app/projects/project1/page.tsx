@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import Nav from '@/app/components/nav';
+import Card from '@/app/components/card';
 
 const convert_bill_share = (total: number, your_share: number, money_from_bank: number) => {
     const  p = your_share / total
@@ -35,10 +35,7 @@ export default function Project1() {
     }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-br from-blue-500 to-green-500">
-        <div className="bg-white text-black px-10 py-10 w-1/2 justify-between gap-5 flex flex-col">
-            <Nav />
-            <h1 className="text-4xl font-bold">Currency converter</h1>
+        <Card title="Currency converter">
             <p> This is a currency converter that converts between two currencies. </p>
             <p> Input the total amount of the bill, your share of the bill and the amount taken from the bank account of the one who paid. </p>
             <p> The bill amounts will be in the visiting countries currency and the bank amount will be in your home currency.</p>
@@ -53,15 +50,14 @@ export default function Project1() {
                 </div>
             ): 
             <form className="bg-white text-black px-10 py-10 justify-between gap-5 flex flex-col">
-                <input type="number" placeholder="Total" required value={total}
+                <input type="number" placeholder="Total (countries currency)" required value={total}
                 onChange={(e) => setTotal(e.target.value)}/>
-                <input type="number" placeholder="Your share" required value={yourShare}
+                <input type="number" placeholder="Your share (countries currency)" required value={yourShare}
                 onChange={(e) => setYourShare(e.target.value)}/>
-                <input type="number" placeholder="Money from bank"  required value={moneyFromBank}
+                <input type="number" placeholder="Money from bank (banks currency)"  required value={moneyFromBank}
                 onChange={(e) => setMoneyFromBank(e.target.value)}/>
                 <button className='hover:bg-slate-50' onClick={convert}>Convert</button>
             </form>}
-        </div>
-    </main>
+        </Card>
   );
 }
