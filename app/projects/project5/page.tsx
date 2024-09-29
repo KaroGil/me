@@ -1,5 +1,4 @@
 import InteractiveMap from '@/app/components/interactiveMap';
-import Nav from '@/app/components/nav';
 import Card from '@/app/components/card';
 
 export default function Project5() {
