@@ -4,6 +4,8 @@ import { VscGithub } from "react-icons/vsc";
 import Link from "next/link";
 
 export default function Home() {
+  const phone = "1";
+  const mail = "test@gmail.com";
   return (
     <main className="min-h-screen bg-gray-100 font-mono">
       <div className="bg-green-500 text-white py-6 text-center grid grid-cols-4 gap-6 p-6">
@@ -98,6 +100,13 @@ export default function Home() {
           <Link href="https://github.com/KaroGil" target="_blank">
             <VscGithub className="size-6" />
           </Link>
+          <Link
+            href={`mailto:${mail}`}
+            className="flex flex-row gap-1 items-center"
+          >
+            {"Mail"}
+          </Link>
+          <Link href={`tel:${phone}`}>Phone</Link>
         </div>
         <p className="mt-4">© 2024 Karolina</p>
       </footer>
